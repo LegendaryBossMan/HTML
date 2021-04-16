@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mad-Lib</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.min.js"></script>
+  </head>
+  <body>
+    <style>
+    #app
+    {
+      text-align: center;
+      margin: auto;
+    }
+    body
+    {
+      background-color: #000000;
+      color: #660000;
+    }
+    table
+    {
+      border: 1px #660000;
+    }
+    /* I can't seem to center the whole thing */
+    </style>
+    <div id="app" ng-app="myApp" ng-controller="myCtrl">
+      <table border="2px">
+        <tr>
+          <td>
+    <button onclick= "show1()">Click to start</button>
+    <div id="part" style="visibility: hidden">
+    <p>Enter a noun:</p>
+    <input type="text" ng-model="noun1"/>
+    <p>Enter a proper name:</p>
+    <input type="text" ng-model="properN"/>
+    <p>Enter a Verb: </p>
+    <input type="text" ng-model="verb1"/>
+    <p>Enter a adjective:</p>
+    <input type="text" ng-model="adjective"/>
+    <p>Enter another noun:</p>
+    <input type="text" ng-model="noun2"/>
+    <p>Enter another verb</p>
+    <input type="text" ng-model="verb2"/>
+    </div>
+</td>
+</tr>
+<tr>
+  <td>
+<div id="part2" style="visibility: hidden">
+<p>There was a <span ng-bind="noun1"></span> named, <span ng-bind="properN"></span> that liked to <span ng-bind="verb1"></span>.</p>
+
+<p>Then one day he was in a(n) <span ng-bind="adjective"></span> <span ng-bind="noun2"></span> and <span ng-bind="verb2"></span>.</p>
+</div>
+<button id="button" onclick= "show2()" ondblclick="Troll()" style="visibility: hidden">Click to Reveal, Double Click me if your Mr. Sullivan</button>
+</td>
+</tr>
+</table>
+<script>
+
+angular.module('myApp',[]).controller('myCtrl',function($scope)
+{
+  $scope.noun1 ="";
+  $scope.properN="";
+  $scope.verb1="";
+  $scope.adjective="";
+  $scope.noun2="";
+  $scope.verb2="";
+
+});
+function show1()
+{
+  document.getElementById("part").style.visibility = "visible";
+  document.getElementById("button").style.visibility = "visible";
+}
+function show2()
+{
+  document.getElementById("part2").style.visibility = "visible";
+}
+function Troll()
+{
+ window.open("https://www.youtube.com/watch?v=_9aLiv5M6AQ");
+}
+</script>
+  </body>
+</html>

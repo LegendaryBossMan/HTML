@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <script>
+    function gradeTest()
+    {
+      var totalQuestions = 5;
+      var correctAnswers = 0;
+      var i;
+
+      //First question Js
+      var a1 = document.getElementById('q1').value.toLowerCase();
+      if(a1 == 'george washington')
+      {
+        correctAnswer++;
+      }
+      //js for 2nd ?
+      var a2 = document.getElementsByName('q2');
+      for(i = 0; i < a2.length; i++)
+      {
+        if(a2[i].checked)
+        {
+          if(a2[i].value == 'true')
+          {
+            correctAnswers++;
+            break;
+          }
+        }
+      }
+      //js for 3rd ?
+      var a3 = document.getElementsByName('q3');
+      for(i = 0; i < a3.length; i++)
+      {
+        if(a3[i].checked)
+        {
+          if(a3[i].value == 'richmond')
+          {
+            correctAnswers++;
+            break;
+          }
+        }
+      }
+      //js for 4th ?
+      var a4 = document.getElementsByName('q4');
+      var a4answers = new Array();
+      var a4right = new Array('chicken','horse');
+      var a4boo1 = true;
+      for(i = 0; i <a4.length; i++)
+      {
+        if(a4[i].checked)
+        {
+          a4answers.push(a4[i].value);
+        }
+      }
+      a4answers.sort();
+      a4right.sort();
+      if(a4answers.length == a4right.length)
+      {
+        for(i = 0; i < a4answers.length; i++)
+        {
+          if(a4answer[i] != a4right[i])
+          {
+            a4boo1 = false;
+            break;
+          }
+        }
+      }
+      else
+      {
+       a4boo1 = false;
+      }
+      if(a4boo1 == true)
+      {
+        correctAnswers++;
+      }
+      //Js afor 5th ?
+      var q5 = document.getElementById('q5');
+      if(q5.selectedIndex == 3)
+      {
+        correctAnswer++;
+      }
+      if(correctAnswers == totalQuestions)
+      {
+        alertText = "All answers are correct.";
+      }
+      else
+        {
+          alertText = "You got " + correctAnswers + " out of " +totalQuestions+ " Correct!";
+        }
+        alert(alertText);
+      }
+    </script>
+  </head>
+  <body>
+<h1>JavaScript Quiz Example</h1>
+<form id="test">
+  <table border="1" cellpadding="5" cellspacing="0">
+    <tr>
+      <td>Who was the first president of the United States?</td>
+      <td><input name="q1" type= "text" id="q1" size="30" maxlength="30"/></td>
+      <!--Text typed input-->
+    </tr>
+    <tr>
+      <td>Was George Washington the first president of the United States</td>
+      <td><input name="q2" type= "radio" value="true"/>True |
+        <input name="q2" type="radio" value="false"/>False
+      </td>
+    </tr>
+  <tr>
+    <td>What is the Capital of Virginia?</td>
+    <td>
+      <input name="q3" type="radio" value="bangor"/>Bangor|
+      <input name="q3" type="radio" value="east overshoe" />East Overshoe|
+      <input name="q3" type="radio" value="portland" />Portland|
+      <input name="q3" type="radio" value="richmond" />Richmond|
+      <input name="q3" type="radio" value="none" />none
+    </tr>
+    <tr>
+      <td width="30%">Which of the following animals are typically found on a farm? {Check all that apply}
+      </td>
+      <td>
+        <input name="q4" type="checkbox" id="q4" value="chicken" />Chicken|
+        <input name="q4" type="checkbox" id="q4" value="swamp thing" />Swamp Thing|
+        <input name="q4" type="checkbox" id="q4" value="horse" />Horse|
+        <input name="q4" type="checkbox" id="q4" value="Squid Monster" />Squid Monster
+      </td>
+      </tr>
+      <tr>
+        <td>
+          The City of Richmond is the capital of what state?
+        </td>
+        <td><select name="q5" id="q5">
+          <option value="alabama">Alabama</option>
+          <option value="new york">New York</option>
+          <option value="alaska">Alaska</option>
+          <option value="virginia">Virginia</option>
+          <option value="maryland">Maryland</option>
+        </select>
+      </td>
+    </tr>
+  </table>
+  <br/>
+  <!--SUbmit button-->
+  <input name="submit" type="button" onclick="gradeTest()" value="Submit and Grade"/>
+</form>
+  </body>
+</html>

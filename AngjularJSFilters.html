@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Filter 1</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.min.js"></script>
+  </head>
+  <body>
+    <div ng-app="myApp" ng-controller="awwYeah">
+
+      <p>Hey {{lastName |uppercase}}, can I get a woop woop! Boyeee!</p>
+<!--uppercase is a filter-->
+    </div>
+    <script>
+    angular.module('myApp',[]).controller('awwYeah',function($scope)
+    {
+      $scope.firstName ="Brennen";
+      $scope.lastName ="murfeie";
+    });
+    </script>
+
+  </body>
+</html>

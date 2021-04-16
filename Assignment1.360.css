@@ -1,0 +1,44 @@
+body
+{
+  background-color: #42f4e2;
+}
+h1
+{
+
+}
+.green
+{
+  background-color: green;
+}
+.different
+{
+ border:  1px solid black;
+ display: inline-block;
+}
+.relevant
+{
+ background-color: pink;
+}
+.important
+{
+ float: right;
+ color: #8a2be2;
+}
+#head
+{
+  text-align: center;
+  background-color: #000000;
+  color:#FF0000;
+  padding: 30px;
+}
+italics
+{
+color: #8b008b;
+text-align: right;
+}
+img
+{
+  height: 190px;
+  width: 240px;
+  float: right;
+}

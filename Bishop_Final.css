@@ -1,0 +1,26 @@
+body
+{
+  background-image: url("Flag.gif");
+  background-size: 100% 850px;
+  font-family: castellar;
+  background-repeat: no-repeat;
+
+}
+h1
+{
+  color: #FFFFFF;
+}
+table
+{
+  background-image: linear-gradient(blue, white, red);
+}
+span
+  {
+    background-image: linear-gradient(blue, white, red);
+  }
+#highlight
+{
+  color: #0000FF;
+  background-color: #000000;
+  z-index: 6;
+}

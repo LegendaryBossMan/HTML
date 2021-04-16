@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Shopping?</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.min.js"></script>
+<meta name="viewport" content="width=device-width"/>
+<style>
+header
+{
+  background-color: #F3F3F3;
+  font-family:  castellar;
+  text-align: center;
+  padding: 5px;
+  margin: 0px;
+}
+ul
+{
+margin-top: 0px;
+margin-left: 0px;
+padding: 0px;
+}
+.listItems
+{
+  list-style: none;
+  font-family: castellar;
+  font-size: 25px;
+  background-color: #F4F4F4;
+  border: solid 1px;
+  border-color: #999999;
+  padding: 5px;
+}
+.theX
+{
+  padding-left:  90%;
+}
+.error
+{
+  font-family: castellar;
+  font-size: 20px;
+}
+</style>
+  </head>
+  <body>
+<script>
+var app = angular.module("myShoppingList", []);
+app.controller("myCtrl", function($scope)
+{
+  $scope.products =["Human Flesh","Nightshade","Human Skull","Human Bones","Dagger","Human Heart"];
+  $scope.addItem = function()
+  {
+    $scope.errortext = "";
+    if(!$scope.addMe)
+    {
+      return;
+    }
+    if($scope.products.indexOf($scope.addMe)== -1)
+    {
+      $scope.products.push($scope.addMe);
+    }else{
+    $scope.errortext = "That item is already in your shopping list!";
+  }
+  }
+  $scope.removeItem = function(x)
+  {
+    $scope.errortext = "";
+    $scope.products.splice(x, 1);
+  }
+})
+
+</script>
+<!--Next html section-->
+<div ng-app="myShoppingList" ng-cloak ng-controller="myCtrl" class="" style="max-width: 400px;">
+  <!-- Prevents unangular js from showing, prevents flicker-->
+<header>
+  <h3>Shoppng list</h3>
+</head>
+<ul class="unorderedList">
+  <li ng-repeat="x in products" class ="listItems">{{x}} <span ng-click ="removeItem($index)" style="cursor:pointer; " class="theX">X</span></li>
+</ul>
+<div class="">
+  <div class="">
+    <input placeholder="Add shopping items here." ng-model="addMe" class ="">
+    <button ng-click="addItem()" class="">AddItem</button>
+  </div>
+</div>
+<p class="error">{{errortext}}</p>
+</div><!--Close ng-app-->
+  </body>
+</html>

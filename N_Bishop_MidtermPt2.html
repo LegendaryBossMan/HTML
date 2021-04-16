@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.min.js"></script>
+    <script src="N_Bishop_MidtermPt2.js"></script>
+    <link rel="stylesheet" href="N_Bishop_MidtermPt2.css">
+    <title>Mid_TermPt2</title>
+  </head>
+  <body>
+
+
+      <div ng-app="myApp" ng-controller="myCtrl">
+          <form>
+
+            <div id="form">
+              <!--Name input 1-->
+              <label for="fName">First Name:</label>
+              <br/>
+              <input type="text" ng-model="fName"/>
+
+              <br/>
+              <!--Name input 2-->
+              <label for="lName">Last Name:</label>
+              <br/>
+              <input type="text" ng-model="lName" />
+              <br/>
+<!--Color input 1-->
+              <label for="fColor" >Enter the first color: </label>
+              <br/>
+              <input id="color" type="text" ng-model="fColor">
+<br/>
+<!--Color input 2-->
+              <label for="sColor" >Enter the second color: </label>
+              <br/>
+              <input id="color1" type="text" ng-model="sColor">
+            <br/>
+<button onclick="colors()">Colorize</button>
+          </form>
+
+</div>
+<div id="table" ng->
+    <!--Table-->
+     <table border="2px">
+       <thead>
+         <tr>
+           <th id="b1">First Name: </th>
+           <th id="b2">Last Name: </th>
+           <th id="b3">Color 1:</th>
+           <th id="b4">Color 2:</th>
+      <tbody>
+        <tr>
+        <td id="color2">{{fName}}</td>
+        <td id="color3">{{lName}}</td>
+        <td id="color4">{{fColor}}</td>
+        <td id="color5">{{sColor}}</td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+  </div>
+  </body>
+</html>

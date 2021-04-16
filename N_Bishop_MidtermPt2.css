@@ -1,0 +1,42 @@
+table
+{
+
+  margin: auto;
+  padding: auto;
+  text-align: center;
+}
+td
+{
+  height: auto;
+  width: auto;
+  text-align: center;
+}
+th
+{
+  height: auto;
+  width: auto;
+  text-align: center;
+}
+body
+{
+  background-color: #000000;
+  color: #FFFFFF;
+  font-family: castellar;
+  background-image: url(Midterm.gif) repeat: None;
+}
+form
+{
+  margin: auto;
+}
+#form
+{
+  margin: auto;
+  float: left;
+}
+#table
+{
+  float: center;
+  margin: auto;
+
+}
+background

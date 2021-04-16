@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<!--Comment Out other section if not is use.-->
+<!--Angular mainly ment for single screen apps-->
+<head>
+  <title>Angular JS</title>
+  <!--Above starts when page is loaded.
+  For AngularJS to work you must have the following line on your page within a script tag;
+-->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.min.js"></script>
+<!--Works like Jquery-->
+</head>
+<body>
+<div ng-app="">
+  <!--Ng is angular, extends attributes of html aka html tag on steroids-->
+  <p>Enter your Name:</p>
+  <input type="text" ng-model="name">
+  <p ng-bind="name"></p>
+</div>
+<!--ng-app 'directive' tells AngularJS,di element is owner of AngularJS app.
+Start and end of div are start and end of application
+ng-model directive binds value of input field to application variable name.
+ng-bind directive binds innerHTMl of <p> tag to application variable name-->
+
+<div ng-app="" ng-init="firstName='CanndedIce'">
+  <p>Her name is<span ng-bind="firstName"></span></p>
+</div>
+<!--Another app-->
+<div ng-app="">
+  <p>What is your favorite food</p>
+  <input type="text" ng-model="food">
+  <p>{{food}}</p>
+</div>
+<!--Above is a named input that displays with a shorthand version of the one prior-->
+<!--Now one that uses a script tag-->
+<div ng-app="myApp" ng-controller="myCtrl">
+  <p>Enter your first name: </p>
+  <input type="text" ng-model="firstName">
+  <p>Enter your last name:</p>
+  <input type="text" ng-model="lasName">
+  <br/>
+  <p>Your full name is: </p>
+  {{firstName + "" + lastName}}
+  <!--Can be outside of <p> if you do not want to edit them-->
+</div>
+<script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope)
+{
+  //method inside a function
+  $scope.firstName = "Breanonen";
+  $scope.lastName = "marpfay";//Can delete names for blank input.
+});
+</script>
+<!--MyApp referes to HTML section that
+AngularJS is going to mainpulate.
+myCtrl is rferring to the script code that
+does the manipulating
+Scope allows the 2 sections to see each other-->
+<div ng-app="" ng-init="myCol='red'">
+  <p>Enter your favorite color: </p>
+
+  <input style="background-color:{{myCol}}" ng-model="myCol" value="{{myCol}}">
+</div>
+
+<!--Arrays can be done with AngularJS-->
+
+<div ng-app="" ng-init="ages=[Lost Generation, Interbellum Generation, The Greatest Generation, The Silent Generation, Baby Boomer Generation, Generation X, Xennials, Generation Y/ Miliennials, Gen Next, IGen/Gen Z, Gen Alpha]">
+  <p>Current "Adult" generation is {{age[7]}} years old.</p>
+
+  <!--You can also use Object-->
+  <div ng-app="" ng-init="student={firstName:'Zachary', lastName:Quiznos', age:'62'}">
+    <p>This is a person......</p><br/><p>First Name: {{student.firstName}}</p>
+    &nbsp;<p>Last Name: {{student.lastName}}</p>
+
+<!--Displays name of your favorite video game-->
+<div ng-app="myApp" ng-controller="myCtrl">
+  <h1>{{gameName}}</h1>
+</div>
+<script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope)
+{
+  $scope.gameName = "Dig-Dug";
+});
+</script>
+
+<p>Property gameName was made in the CONTROLLER(AKA Javascript), it can be referred to in the VIEW.</p>
+<!--View is what is seen(AKA HTML)...-->
+<!--Background in the CONTROLLER!!!!.........CHOCOLAAAATTTTTE!!!!!!-->
+<!--Create web app that allows user to enter ingerdeients(at least 3) of a recipe.
+With ANGULARJS, display recipe with those incredientts.-->
+</body>
+</html>

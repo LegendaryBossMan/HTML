@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <title>Example 2</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.min.js"></script>
+  </head>
+  <body>
+    <div ng-app="myApp">
+      <h1>Super Duper Text Coverter</h1>
+      <span>Enter some amazing text:</span>
+      <input type="text" ng-model="inputString"/>
+<br/>
+      <span>TEXT CONVERTED:</span>
+      <span>{{inputString | clean}}</span>
+    </div>
+    <script>
+    var app = angular.module('myApp',[]);
+    app.filter('clean', function(){
+      return function(input)
+      {
+        if(input)
+        {
+          return input.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/ig,'');
+        }
+        //finds any space and replaces with dash("-"), also changes uppercase to lowercase.
+      }
+    });
+    </script>
+  </body>
+</html>

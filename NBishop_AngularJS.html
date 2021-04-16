@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CONTACT LIST</title>
+    <meta name="viewpoint" content="width=device-width, initial-scale=1" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.min.js"></script>
+    <script src="Assignment.js"></script>
+    <link rel="stylesheet" href="css.css">
+    <!--Original right?-->
+
+  </head>
+  <body>
+    <div ng-app="myApp">
+      <div ng-controller="ContactController">
+        <form align="center">
+          <div class="div">
+            <!--Here is a class-->
+            <label for="name">Name:</label>
+            <input type="text" placeholder="Enter Name" ng-model="newcontact.name"/>
+          </div>
+          <div>
+            <label for="email">Email:</label>
+
+            <input type="text" placeholder="Enter Email" ng-model="newcontact.email" />
+          </div>
+          <div>
+            <label for="phone">Phone:</label>
+            <input type="text" placeholder="Enter Phone Number" ng-model="newcontact.phone">
+          </div>
+
+          <input type="hidden" ng-model="newcontact.id" />
+          <input type="button" ng-click="saveContact()" value="Submit" />
+        </form>
+
+        <!-- AND NOW THE TABLE!! -->
+        <table border="2px;" align="center">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Phone</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="contact in contacts">
+            <td>{{contact.name}}</td>
+            <td>{{contact.email}}</td>
+            <td>{{contact.phone}}</td>
+
+            <td>
+              <a href="#" ng-click="edit(contact.id)" role="button">EDIT</a>
+              &nbsp;
+              <a href="#" ng-click="delete(contact.id)" role="button">DELETE</a>
+            </td>
+            </tr>
+          </tbody>
+        </table>
+        <center><h6>Background just for you Mr.Sullivan</h6></center>
+
+      </div>
+    </div>
+  </body>
+</html>

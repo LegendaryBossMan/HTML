@@ -1,0 +1,17 @@
+body
+{
+  background-image: url("WestVa.jpg");
+
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+span
+{
+text-align: center;
+color: #FFFFFF;
+}
+h1
+{
+  text-align: center;
+  color: #FFFFFF;
+}

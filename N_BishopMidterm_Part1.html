@@ -1,0 +1,25 @@
+<!DOCTYPE html><!--Was missing !-->
+<html><!--had an extra t-->
+  <head><!--Didn't have the opening of the head section-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.min.js"></script>
+    
+<!--Not the most up to date version-->
+    <title></title>
+  </head>
+  <body style="background-color: #123456;">
+    <div ng-app="myApp" ng-controller="myCtrl">
+      <ul class="list"><!--Had an extra l-->
+        <li ng-reperat="y in names">{{names}}</li><!--names and not x -_-  -->
+      </ul>
+    </div><!--Didn't close the div properly-->
+    <script>//Spelling script wrong, who hired this person?
+    var app = angular.module('myApp',[]);//Forgetting names? realy?
+    app.controller('myCtrl',function($scope)
+  {
+    $scope.names=["Nick","Branon","Candice"]
+  });//Forgot ;
+    </script>
+    <!--Didn't actually close the script.....this person diserves to be fired. Right meow-->
+  </body><!--Had an extra O -->
+
+</html>

@@ -1,0 +1,46 @@
+td
+{
+  margin: auto;
+}
+table
+{
+  padding: auto;
+
+}
+th
+{
+  padding: 10px;
+  /* Here is padding */
+  font-size: 25px;
+  background-color: #FF00FF;
+  /* Here is a font change */
+  font-family: castellar;
+}
+td
+{
+  padding: auto;
+  background-color: #6600FF;
+}
+body
+{
+  background-color: #660066;
+  background-image: url("Funny.gif");
+min-height: 500px;
+background-attachment: fixed;
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+}
+label
+{
+  font-size: 20px;
+  background-color: #660000;
+}
+a
+{
+  color: #000000;
+}
+.button
+{
+ background-color: #660000;
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.min.js"></script>
+  </head>
+<body>
+    <div ng-app="myApp" ng-controller="myCtrl">
+      <p>Enter first ingredients: </p>
+      <input type="text" ng-model="firstIgn">
+      <p>Enter second Ingredient:</p>
+      <input type="text" ng-model="seconIgn">
+      <p>Enter third Ingredient:</p>
+      <input type="text" ng-model="thirdIgn">
+
+
+      <br/>
+      <p>Your ingredients are: </p>
+      <button onclick="display()">Submit</button>
+       <ul id="list">
+         <li>{{firstIgn}}</li>
+         <li>{{seconIgn}}</li>
+         <li>{{thirdIgn}}</li>
+       </ul>
+      <!--Can be outside of <p> if you do not want to edit them-->
+    </div>
+    <script>
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', function($scope)
+    {
+      //method inside a function
+      $scope.firstIgn = "";
+      $scope.seconIgn = "";
+      $scope.thirdIgn = "";
+    });
+    function display()
+    {
+      document.getElementById('firstIgn').value;
+      document.getElementById('seconIgn').value;
+      document.getElementById('thirdIgn').value;
+      window.open("")
+    }
+    </script>
+  </body>
+</html>
